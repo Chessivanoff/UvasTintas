@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
+import VinosCards_Tintos from './Components/VinosCardsContainer';
 
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
 
       </header>
     </div>
-    
+    <VinosCards_Tintos/>
 
     
     <Footer></Footer>
