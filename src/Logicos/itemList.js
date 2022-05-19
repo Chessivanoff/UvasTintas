@@ -1,11 +1,11 @@
 import React from 'react'
-import ItemCard from './ItemCard'
+import ItemsCards from '../Components/ItemsCards'
 
 const ItemList = (props) => {
     console.log (props.ListaProductos)
   return (
     <div>
-{props.ListaProductos.map((item)=> <ItemCard producto={item}/> )}
+{props.ListaProductos.map((item)=> <ItemsCards producto={item}/> )}
 
 
     </div>

@@ -2,7 +2,7 @@ import { dataVinos } from "./DataVinos";
 import { useState, useEffect } from "react";
 import ItemList from "./itemList";
 
-const VinosCards_Tintos = () => {
+const VinosCardsContainer = () => {
   const [productos, setProductos] = useState([]);
   console.log(productos);
 
@@ -46,4 +46,4 @@ const VinosCards_Tintos = () => {
   )
 };
 
-export default VinosCards_Tintos;
+export default VinosCardsContainer;

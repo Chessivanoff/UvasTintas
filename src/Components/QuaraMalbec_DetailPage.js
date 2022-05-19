@@ -1,9 +1,43 @@
 import React from 'react';
-import quaraMalbec from './Images/quaraMalbec.jpg';
+import { useParams } from 'react-router-dom';
+import VinosCardsContainer from '../Logicos/VinosCardsContainer';
 
-const QuaraMalbecDetail = () => {
+const QuaraMalbec_DetailPage = () => {
+
+    const { id } = useParams (); //es un string
+
   return (
-    <div>
+
+    <main> 
+
+        <h1>Detalle de Producto {id} </h1>
+        <VinosCardsContainer id={id} />
+
+        <div>
+
+            <div> {producto.category} </div>
+            <div> {producto.pictureUrl}</div>
+            <div> {producto.description} </div>
+
+        </div>
+
+        <div class="flex items-stretch">
+            <div><Link to={ '/product/$ { id }' }><button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" style= {{margin:'15px', padding:'10px'}} >Comprar</button></Link></div>
+            <div><button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" style= {{margin:'15px', padding:'10px'}} >Ver descripción</button></div>
+        </div>
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+   /* <div>
         <section className="text-gray-600 body-font">
             <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
                 <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
@@ -23,8 +57,9 @@ const QuaraMalbecDetail = () => {
             </div>
         </section>
 
-    </div>
+    </div> */
+
   )
 }
 
-export default QuaraMalbecDetail
+export default QuaraMalbec_DetailPage

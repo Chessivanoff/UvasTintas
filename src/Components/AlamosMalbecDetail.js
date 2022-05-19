@@ -1,5 +1,5 @@
 import React from 'react';
-import alamosMalbec from './Images/alamosMalbec.jpg';
+
 
 const AlamosMalbecDetail = () => {
   return (
