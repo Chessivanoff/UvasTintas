@@ -1,27 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from './Components/Home';
-import ItemsCards from './Components/ItemsCards';
-import AlamosMalbecDetail from './Components/AlamosMalbecDetail';
+import VinosCardsContainer from './Logicos/VinosCardsContainer';
 import { BrowserRouter , Routes , Route } from 'react-router-dom';
 import NavBar from './Components/NavBar';
+import Footer from './Components/Footer';
+import ItemDetailContainer from './Logicos/ItemDetailContainer';
+
 
 
 function App() {
   return (
 
-
+    <>
+    
     <BrowserRouter>
 
+        <NavBar/>
 
         <Routes> 
 
             <Route path="/" element={<Home/> }/>
-            <Route path="/products" element={<ItemsCards/>}/>
-            <Route path="product/:id" element={<AlamosMalbecDetail/>}/>
+            <Route path="/products" element={<VinosCardsContainer/>}/>
+            <Route path="products/:vinoId" element={<ItemDetailContainer/>}/>
 
         </Routes>
+
+        <Footer/>
     </BrowserRouter>
+
+
+
+    </>
+
 
   );
 }

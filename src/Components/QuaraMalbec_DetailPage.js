@@ -1,8 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import VinosCardsContainer from '../Logicos/VinosCardsContainer';
+import { Link } from 'react-router-dom';
 
-const QuaraMalbec_DetailPage = () => {
+
+const QuaraMalbec_DetailPage = ({producto}) => {
 
     const { id } = useParams (); //es un string
 
@@ -13,17 +15,17 @@ const QuaraMalbec_DetailPage = () => {
         <h1>Detalle de Producto {id} </h1>
         <VinosCardsContainer id={id} />
 
-        <div>
+        <div style= {{ display:'flex', flexWrap:'wrap'}}>
+                    <div>
+                        <div> {producto.category} </div>
+                        <div> {producto.pictureUrl}</div>
+                        <div> {producto.description} </div>
+                    </div>
 
-            <div> {producto.category} </div>
-            <div> {producto.pictureUrl}</div>
-            <div> {producto.description} </div>
-
-        </div>
-
-        <div class="flex items-stretch">
-            <div><Link to={ '/product/$ { id }' }><button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" style= {{margin:'15px', padding:'10px'}} >Comprar</button></Link></div>
-            <div><button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" style= {{margin:'15px', padding:'10px'}} >Ver descripción</button></div>
+                    <div className="flex items-stretch">
+                        <div><Link to={ '/product/$ { id }' }><button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" style= {{margin:'15px', padding:'10px'}} >Comprar</button></Link></div>
+                        <div><button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" style= {{margin:'15px', padding:'10px'}} >Ver descripción</button></div>
+                    </div>
         </div>
 
     </main>

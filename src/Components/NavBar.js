@@ -20,9 +20,9 @@ const NavBar = () => {
 
 
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <li className="mr-5 hover:text-gray-900"><Link to={'/ItemsCards'}> Tintos </Link></li>
-            <li className="mr-5 hover:text-gray-900"><Link to={'/ItemsCards'}> Blancos </Link></li>
-            <li className="mr-5 hover:text-gray-900"><Link to={'/ItemsCards'}> Rosados </Link></li>
+            <li className="mr-5 hover:text-gray-900"><Link to={'/products'}> Tintos </Link></li>
+            <li className="mr-5 hover:text-gray-900"><Link to={'/products'}> Blancos </Link></li>
+            <li className="mr-5 hover:text-gray-900"><Link to={'/products'}> Rosados </Link></li>
         </nav>
 
 <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">

@@ -1,6 +1,6 @@
 import { dataVinos } from "./DataVinos";
 import { useState, useEffect } from "react";
-import ItemList from "./itemList";
+import VinosList from "../Components/VinosList";
 
 const VinosCardsContainer = () => {
   const [productos, setProductos] = useState([]);
@@ -38,12 +38,16 @@ const VinosCardsContainer = () => {
     });
   return (
 
-  <>
-  <ItemList ListaProductos={productos}/>
-  
-  </>
+    <>
+    <h1 style={{alignItems:"center"}}> Lista de Vinos </h1>
 
-  )
+    <VinosList/>
+    
+    
+    </>
+  
+
+  );
 };
 
 export default VinosCardsContainer;
