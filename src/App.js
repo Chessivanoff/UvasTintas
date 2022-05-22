@@ -5,6 +5,7 @@ import { BrowserRouter , Routes , Route } from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
 import ItemDetailContainer from './Logicos/ItemDetailContainer';
+import CartContextProvider from './Logicos/CartContextProvider';
 
 
 
@@ -12,7 +13,8 @@ function App() {
   return (
 
     <>
-    
+    <CartContextProvider/>
+
     <BrowserRouter>
 
         <NavBar/>
@@ -27,6 +29,8 @@ function App() {
 
         <Footer/>
     </BrowserRouter>
+      
+ 
 
 
 

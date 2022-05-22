@@ -1,20 +1,26 @@
 import React from 'react';
 import { dataVinos } from '../Logicos/DataVinos';
+import { useCartContext } from '../Logicos/CartContextProvider';
+import ItemCount from '../Logicos/ItemCount';
+
+export default function AlamosMalbecDetail({producto}) {
+    const { addToCart} =useCartContext();    
+
+    function handleOnAdd(count) {
+        console.log(count);
+    }
 
 
-const AlamosMalbecDetail = () => {
-    
   return (
 
-    <>
     <div>
         
         <div
         className={ "text-gray-600 body-font" } 
         style={{
-          display:"flex", 
-          flexDirection: "column", 
-          alignItems:"center", 
+          display:'flex', 
+          flexDirection: 'column', 
+          alignItems:'center', 
           }}>
             <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
                 <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
@@ -37,12 +43,8 @@ const AlamosMalbecDetail = () => {
                 </div>
             </div>
         </div>
-
+          <ItemCount initial={1} stock={producto.stock} onAdd={handleOnAdd}/>
     </div>
-    
-    </>
 
-  )
+  );
 }
-
-export default AlamosMalbecDetail
