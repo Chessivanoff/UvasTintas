@@ -5,7 +5,8 @@ import { BrowserRouter , Routes , Route } from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
 import ItemDetailContainer from './Logicos/ItemDetailContainer';
-import CartContextProvider from './Logicos/CartContextProvider';
+import CartContext from './Logicos/CartContext';
+import CartItem from './Components/CartItem';
 
 
 
@@ -13,7 +14,7 @@ function App() {
   return (
 
     <>
-    <CartContextProvider/>
+    <CartContext>
 
     <BrowserRouter>
 
@@ -21,14 +22,18 @@ function App() {
 
         <Routes> 
 
-            <Route path="/" element={<Home/> }/>
+            <Route path="/" element={<Home/>}/>
             <Route path="/products" element={<VinosCardsContainer/>}/>
             <Route path="products/:vinoId" element={<ItemDetailContainer/>}/>
+            <Route path="products/Cart" element = {<CartItem/>}/>
 
         </Routes>
 
         <Footer/>
     </BrowserRouter>
+
+    </CartContext>
+
       
  
 

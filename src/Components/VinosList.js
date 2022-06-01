@@ -30,7 +30,7 @@ const VinosList = (productos) => {
           <img 
           height="300" 
           width="250" 
-          src={dataVinos.pictureUrl} 
+          src={vino.pictureUrl} 
           alt="Imagen de la botella a modo de presentación"/>
           <h3 style={{alignItems:"center", margin:'10px', padding:'5px' }}> {vino.description} </h3>
 

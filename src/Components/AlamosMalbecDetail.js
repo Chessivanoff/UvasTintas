@@ -1,13 +1,14 @@
 import React from 'react';
 import { dataVinos } from '../Logicos/DataVinos';
-import { useCartContext } from '../Logicos/CartContextProvider';
+import { useCartContext } from '../Logicos/CartContext';
 import ItemCount from '../Logicos/ItemCount';
 
 export default function AlamosMalbecDetail({producto}) {
-    const { addToCart} =useCartContext();    
+    const { addToCart } = useCartContext();    
 
     function handleOnAdd(count) {
         console.log(count);
+        addToCart(producto, count);
     }
 
 
