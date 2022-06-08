@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { dataVinos } from '../Logicos/DataVinos'
+import { DataVinos } from '../Data/DataVinos'
 
 const VinosList = (productos) => {
   return (
@@ -10,7 +10,7 @@ const VinosList = (productos) => {
   
   <div style={{ display: 'flex', flexWrap:'wrap'}}>
 
-      {dataVinos.map((vino) => (
+      {DataVinos.map((vino) => (
 
         <div key={vino.id} 
         className={ "rounded-lg" } 

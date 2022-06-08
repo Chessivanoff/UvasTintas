@@ -23,6 +23,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
     return (
 
         <div>
+            <h1>Esta es tu compra</h1>
             <div>
                 <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" style= {{margin:'15px', padding:'10px'}} onClick={handleSubstract}>-</button>
                 <span>{count}</span>
@@ -30,7 +31,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
             </div>
 
             <div>
-            |   <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" style= {{margin:'15px', padding:'10px'}} onClick={() => onAdd(count)}>Agregar a mi compra</button>
+            |   <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" style= {{margin:'15px', padding:'10px'}} onClick={ () => onAdd(count)}>Agregar a mi compra</button>
             </div>
         </div>
 

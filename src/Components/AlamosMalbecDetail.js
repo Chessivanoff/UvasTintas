@@ -1,16 +1,19 @@
 import React from 'react';
-import { dataVinos } from '../Logicos/DataVinos';
-import { useCartContext } from '../Logicos/CartContext';
+import { CartContextProvider } from '../Logicos/CartContext';
 import ItemCount from '../Logicos/ItemCount';
+import {Link} from "react-router-dom";
+import { useState, handleOnAdd } from 'react';
 
-export default function AlamosMalbecDetail({producto}) {
-    const { addToCart } = useCartContext();    
 
-    function handleOnAdd(count) {
-        console.log(count);
-        addToCart(producto, count);
-    }
+const AlamosMalbecDetail = ({vino}) => {
+  const [isInCart, setIsInCart] = useState(false);
 
+  const { cart, addToCart } = CartContextProvider();
+
+  function onAdd(count) {
+    setIsInCart(true);
+    addToCart (vino, count);
+  }
 
   return (
 
@@ -25,10 +28,10 @@ export default function AlamosMalbecDetail({producto}) {
           }}>
             <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
                 <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                    <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">{dataVinos.id} 
+                    <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">{vino.id} 
                     </h1>
 
-                    <p className="mb-8 leading-relaxed">{dataVinos.description}</p>
+                    <p className="mb-8 leading-relaxed">{vino.description}</p>
                     
                     <div className="flex justify-center">
                             <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Comprar</button>
@@ -39,13 +42,21 @@ export default function AlamosMalbecDetail({producto}) {
                 <img 
                     height="300" 
                     width="250" 
-                    src={dataVinos.pictureUrl} 
+                    src={vino.pictureUrl} 
                     alt="Imagen de la botella a modo de presentación"/>
                 </div>
+                
+                {isInCart ? (
+                  <Link to="/cart">Ir al carrito</Link>
+                ) : (
+                  <ItemCount initial={1} stock={vino.stock} onAdd={handleOnAdd}/>
+                )}
+
             </div>
         </div>
-          <ItemCount initial={1} stock={producto.stock} onAdd={handleOnAdd}/>
     </div>
 
   );
 }
+
+export default AlamosMalbecDetail; 

@@ -16,7 +16,7 @@ const NavBar = () => {
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
             </svg>
 
-            <span className="ml-3 text-xl">Uvas Tintas</span>
+            <span className="ml-3 text-xl"><Link to={"/"}> Uvas Tintas </Link></span>
         </a>
 
 

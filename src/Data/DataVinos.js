@@ -1,6 +1,6 @@
 /*Aqui se declara una constante con un array de productos. Se puede re utilizar en otros componentes con la palabra reservada "dataVinos*/
 
-export const dataVinos = [
+export const DataVinos = [
       { 
       name: 'Quara', 
       year: '2022', 

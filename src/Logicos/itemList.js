@@ -1,13 +1,15 @@
 import React from 'react'
-import { dataVinos } from './DataVinos'
+import { DataVinos } from './DataVinos'
 
-const ItemList = (props) => {
+const ItemList = ( vinos ) => {
     console.log (props.ListaProductos)
   return (
     <div>
-{props.ListaProductos.map((item)=> <dataVinos producto={item}/> )}
-
-
+      {vinos.ListaProductos.map((item )=> {
+        return (
+          <DataVinos producto={item}/>
+        )
+      }) }
     </div>
   )
 }

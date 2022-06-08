@@ -1,4 +1,4 @@
-import { dataVinos } from "./DataVinos";
+import { DataVinos } from "../Data/DataVinos";
 import { useState, useEffect } from "react";
 import VinosList from "../Components/VinosList";
 
@@ -6,18 +6,20 @@ const VinosCardsContainer = () => {
   const [productos, setProductos] = useState([]);
   console.log(productos);
 
+
   const promise = (error) =>
     new Promise((res, rej) => {
       setTimeout(() => {
         if (error == false) {
-          res(dataVinos);
+          res(DataVinos);
         } else {
           rej("Hubo un error");
         }
-      }, 2000);
+      }, 2000); 
     });
 
   const parametro = false;
+
 
   useEffect(() => {
     promise(parametro)
@@ -35,7 +37,8 @@ const VinosCardsContainer = () => {
     })
     .catch((error) => {
       console.log(error);
-    });
+    }); 
+
   return (
 
     <>
